@@ -1,0 +1,33 @@
+.sideBarWrapper {
+    position: fixed;
+    top: 32%;
+    right: 60px;
+    z-index: 5;
+}
+
+.sideBarContent {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 24px 20px;
+    border-radius: 100px;
+}
+
+.sideBarListWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 42px;
+}
+
+.sideBarListItemLink {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sideBarListItem {
+    color: white;
+    transition: all 0.2s ease-in-out;
+}
+
+.sideBarListItem:hover {
+    color: black;
+}

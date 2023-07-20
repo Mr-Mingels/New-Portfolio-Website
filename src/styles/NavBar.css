@@ -3,10 +3,9 @@
     top: 0;
     left: 0;
     background-color: transparent;
-    box-shadow: 0 5px 20px rgba(0,0,0,.5);
     height: 70px;
     width: 100%;
-    z-index: 100;
+    z-index: 5;
 }
 
 .navBarContent {
@@ -14,7 +13,7 @@
     color: #fff;
     display: flex;
     height: 100%;
-    padding: 15px 100px;
+    padding: 15px 200px;
     justify-content: space-between;
 }
 
@@ -25,10 +24,17 @@
 .navBarItemsWrapper {
     display: flex;
     list-style: none;
-    gap: 24px;
+    gap: 44px;
 }
 
 .navBarItem {
     cursor: pointer;
+    width: 20px;
+    height: 20px;
+    color: rgb(200, 200, 200);
+    transition: color 0.3s ease-in-out;
+}
 
+.navBarItem:hover {
+    color: white;
 }

@@ -1,5 +1,6 @@
 import React from 'react'
 import '../styles/AboutMe.css'
+import Transition from './Transition'
 
 const AboutMe = () => {
   return (
@@ -21,4 +22,4 @@ const AboutMe = () => {
   )
 }
 
-export default AboutMe
+export default Transition(AboutMe)

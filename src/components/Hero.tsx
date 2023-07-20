@@ -3,12 +3,12 @@ import { TypeAnimation } from 'react-type-animation';
 import StarsCanvas from './canvas/StarsCanvas'
 import '../styles/Hero.css'
 import heroImg from '../assets/img.jpg'
+import Transition from './Transition';
 
 
 const Hero = () => {
     return (
         <div className='heroWrapper'>
-            <img className='heroImg' src={heroImg} onMouseDown={(e) => e.preventDefault()}/>
             <div className='heroContent'>
                 <div className='heroContentInfoWrapper'>
                     <h1 className='heroDevName'>Pierre Mingels</h1>
@@ -28,10 +28,11 @@ const Hero = () => {
                             repeat={Infinity}
                         />
                     </div>
+                    <button className='heroBtn'>Contact</button>
                 </div>
             </div>
         </div>
     )
 }
 
-export default Hero
+export default Transition(Hero)

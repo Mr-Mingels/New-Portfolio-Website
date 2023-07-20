@@ -1,0 +1,24 @@
+.transitionMotionDiv {
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    right: 100%;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+}
+
+.transitionMotionDiv.first {
+    z-index: 30;
+    background-color: black;
+}
+
+.transitionMotionDiv.second {
+    z-index: 20;
+    background-color: #050505;
+}
+
+.transitionMotionDiv.third {
+    z-index: 10;
+    background-color: #0e0e0e;;
+}

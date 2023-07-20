@@ -1,9 +1,7 @@
 .aboutMeWrapper {
-    background-color: #050505;
+    position: relative;
+    z-index: 2;
 }
-
-/* background-color: #0e0e0e; */
-/* background-color: #050505; */
 
 .aboutMeCotent {
     padding: 100px;

@@ -2,18 +2,6 @@
     height: 760px;
 }
 
-.heroImg {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    border: none;
-    outline: none;
-    object-fit: cover;
-}
-
 .heroContent {
     align-items: flex-start;
     display: flex;
@@ -40,6 +28,29 @@
     font-size: 50px;
     font-weight: 200;
 }
+    
+.heroBtn {
+    width: 170px;
+    border: 2px solid white;
+    color: black;
+    cursor: pointer;
+    font-size: 18px;
+    margin: 15px 0 40px;
+    padding: 10px 30px;
+    text-align: center;
+    text-decoration: none;
+    background: linear-gradient(to top right, black 50%, white 50%);
+    background-size: 200% 200%;
+    transition: background-position 0.3s, color 0.3s;
+    background-position: 99% 0;
+    overflow: hidden;
+  }
+  
+  .heroBtn:hover {
+    color: white;
+    background-position: 0 100%;
+  }
+  
 
 .starsCanvasWrapper {
     height: 100%;
