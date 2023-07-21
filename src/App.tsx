@@ -6,6 +6,9 @@ import NavBar from './components/NavBar';
 import SideBar from './components/SideBar';
 import Hero from './components/Hero';
 import AboutMe from './components/AboutMe';
+import Projects from './components/Projects';
+import Skills from './components/Skills';
+import Contact from './components/Contact';
 import appImg from './assets/appImg.jpg'
 
   const RedirectToHome = () => {
@@ -29,6 +32,9 @@ const App = () => {
         <Routes location={location} key={location.pathname}>
             <Route index element={<Hero />}/>
             <Route path='/aboutme' element={<AboutMe />} />
+            <Route path='/projects' element={<Projects />} />
+            <Route path='/skills' element={<Skills />} />
+            <Route path='/contact' element={<Contact />} />
             <Route path='*' element={<RedirectToHome />} />
         </Routes>
       </AnimatePresence>

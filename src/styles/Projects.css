@@ -1,0 +1,136 @@
+.projectsWrapper {
+    height: 100vh;
+    min-height: 760px;
+}
+
+.projectsContent {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    padding: 0 200px;
+    position: relative;
+    z-index: 2;
+}
+
+.projectsMyWorkTxt {
+    color: #C0C0C0;
+    font-weight: 400;
+    font-size: 16px;   
+    margin-top: 112px; 
+}
+
+.projectsTitle {
+    color: white;
+    font-size: 42px;
+}
+
+.projectsMainTxt {
+    margin-top: 24px;
+    color: #C0C0C0;
+    font-size: 15px;
+}
+
+.projectsCarouselWrapper {
+    width: 100%;
+    margin-top: auto;
+}
+
+.projectCarouselSlide {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 42px;
+}
+
+.projectCard {
+    background-color: #151515;
+    border-radius: 10px;
+    border: 2px solid rgb(200, 200, 200);
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 300px;
+    margin: auto;
+    text-align: center;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.3); /* This line adds a box shadow */
+}
+
+.projectImgWrapper {
+    position: relative;
+}
+
+.projectImg {
+    height: 150px;
+    border-radius: 10px;
+    object-fit: cover;
+    -webkit-user-select: none;  /* Chrome, Safari and Opera */
+    -moz-user-select: none;     /* Firefox */
+    -ms-user-select: none;      /* Internet Explorer/Edge */
+    user-select: none;  
+}
+
+.projectImgSelectorsWrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.projectIconLink {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+}
+
+.projectIcon {
+    background-color: white;
+    border-radius: 100%;
+    padding: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    height: 16px;
+    width: 18px;
+}
+
+.projectIcon:hover {
+    color: white;
+    background-color: black;
+}
+
+.projectTitle {
+    align-self: flex-start;
+    color: white;
+    font-size: 18px;
+}
+
+.projectTxt {
+    text-align: start;
+    font-size: 12px;
+    color: rgb(200, 200, 200);
+}
+
+.projectTagsWrapper {
+    align-self: flex-start;
+    font-size: 13px;
+}
+
+.firstTag {
+    color: rgb(82, 190, 226);
+}
+
+.secondTag {
+    color: rgb(101, 160, 101);
+}
+
+.thirdTag {
+    color: rgb(255, 121, 121);
+}

@@ -14,10 +14,15 @@ body {
 .appImg {
   height: 100%;
   width: 100%;
+  min-height: 760px;
   position: absolute;
   top: 0;
   left: 0;
   border: none;
   outline: none;
   object-fit: cover;
+  -webkit-user-select: none;  /* Chrome, Safari and Opera */
+  -moz-user-select: none;     /* Firefox */
+  -ms-user-select: none;      /* Internet Explorer/Edge */
+  user-select: none;  
 }

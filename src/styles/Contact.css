@@ -1,0 +1,147 @@
+.contactWrapper {
+    height: 100vh;
+    min-height: 760px;
+}
+
+.contactContent {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    padding: 0 200px;
+    position: relative;
+    z-index: 2;
+}
+
+.contactTitle {
+    color: white;
+    font-size: 38px;
+    font-weight: 600;
+    margin-bottom: 28px;
+}
+
+.contactFormWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.userInfoInputsWrapper {
+    display: flex;
+    gap: 20px;
+}
+
+.formInput {
+    padding: 8px 12px;
+    border-radius: 4px;
+    background-color: #151515;
+    border: 2px solid rgb(150, 150, 150);
+    outline: none;
+    color: white;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+}
+
+.formInput.red::placeholder {
+    color: rgb(255, 100, 100);
+}
+
+.formInput:focus {
+    border-color: white;
+}
+
+.formInput.subject {
+    width: 500px;
+}
+
+.formInput.message {
+    height: 200px;
+    resize: none;
+}
+
+.formBtn {
+    width: 140px;
+    height: 43px;
+    padding: 10px;
+    border-radius: 22px;
+    outline: none;
+    border: 2px solid white;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    background: linear-gradient(to top right, white 50%, #151515 50%);
+    background-size: 200% 200%;
+    transition: background-position 0.3s, color 0.3s;
+    background-position: 99% 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formBtn:hover {
+    color: #151515;
+    background-position: 0 100%;
+}
+
+.formBtn.loading:hover {
+    color: white;
+    background-position: 99% 0;
+}
+
+.submitLoader {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    position: relative;
+    animation: modalLoader-rotate 1s linear infinite
+}
+.submitLoader::before {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    inset: 0px;
+    border-radius: 50%;
+    border: 2px solid #FFF;
+    animation: prixClipFix 2s linear infinite ;
+}
+  
+@keyframes modalLoader-rotate {
+    100%   {transform: rotate(360deg)}
+}
+  
+@keyframes prixClipFix {
+    0%   {clip-path:polygon(50% 50%,0 0,0 0,0 0,0 0,0 0)}
+    25%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 0,100% 0,100% 0)}
+    50%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,100% 100%,100% 100%)}
+    75%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 100%)}
+    100% {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 0)}
+}
+
+.contactModalWrapper {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    background-color: #151515;
+    padding: 10px 10px 10px 16px;
+    color: rgb(200, 200, 200);
+    z-index: 9;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    border: 2px solid rgb(200, 200, 200);
+    border-radius: 4px;
+}
+
+.modalTxt {
+    font-size: 14px;
+}
+
+.modalIcon {
+    width: 10px;
+    height: 10px;
+    cursor: pointer;
+    margin-bottom: auto;
+}

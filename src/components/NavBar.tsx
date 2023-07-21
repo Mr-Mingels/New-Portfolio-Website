@@ -9,7 +9,7 @@ const NavBar = () => {
         <div className='navBarWrapper'>
             <div className='navBarContent'>
                 <h3 className='navBarTitle'>Mr.Mingels</h3>
-                <ul className='navBarItemsWrapper'>
+                <ul className='navBarItemsWrapper' onMouseDown={(e) => e.preventDefault()}>
                     <a href="https://github.com/Mr-Mingels" target="_blank" rel="noopener noreferrer" 
                     className='navBarItem'><FontAwesomeIcon className='navBarItem' icon={faGithub} /></a>
                     <a href="mailto:Pierre.Mingels@protonmail.com" target="_blank" rel="noopener noreferrer" 

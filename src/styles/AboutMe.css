@@ -1,10 +1,17 @@
 .aboutMeWrapper {
-    position: relative;
-    z-index: 2;
+    height: 100vh;
+    min-height: 760px;
 }
 
 .aboutMeCotent {
-    padding: 100px;
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    padding: 0 200px;
+    position: relative;
+    z-index: 2;
 }
 
 .aboutMeSecTitle {
@@ -24,6 +31,40 @@
     font-size: 15px;
 }
 
-.aboutMeResumeBtn {
-    
-}   
+.aboutMeCardsWrapper {
+    width: 100%;
+    display: flex;
+    -webkit-user-select: none;  /* Chrome, Safari and Opera */
+    -moz-user-select: none;     /* Firefox */
+    -ms-user-select: none;      /* Internet Explorer/Edge */
+    user-select: none;  
+    gap: 62px;
+    justify-content: center;
+    margin-top: 42px;
+    flex-wrap: wrap;
+}
+
+.aboutMeCard {
+    background-color: #151515;
+    border-radius: 10px;
+    border: 2px solid rgb(200, 200, 200);
+    padding: 62px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    width: 240px;
+    text-align: center;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.3); /* This line adds a box shadow */
+}
+
+.cardImg {
+    width: 60px;
+    height: 60px;
+}
+
+.cardTitle {
+    color: white;
+    font-size: 16px;
+}

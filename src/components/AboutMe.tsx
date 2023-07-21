@@ -1,6 +1,10 @@
 import React from 'react'
 import '../styles/AboutMe.css'
 import Transition from './Transition'
+import frontEndIcon from '../assets/frontEndIcon.png'
+import backEndIcon from '../assets/backEndIcon.png'
+import webDevIcon from '../assets/webDevIcon.png'
+import { Tilt } from 'react-tilt'
 
 const AboutMe = () => {
   return (
@@ -8,15 +12,31 @@ const AboutMe = () => {
         <div className='aboutMeCotent'>
             <h5 className='aboutMeSecTitle'>ABOUT ME</h5>
             <h2 className='aboutMeOverViewTxt'>Overview.</h2>
-            <p className='aboutMeTxt'>Hello. I'm Pierre Mingels, a skilled full-stack software developer from San Diego, California. 
-                I have experience in popular languages such as TypeScript and JavaScript, as well as experience in 
-                frameworks like React, Express.js, and other types of technology. I'm a quick learner and 
-                believe that continued learning is paramount in this fast-evolving field, which is why I dedicate 
-                a good portion of my time to keeping up to date with the latest trends and technology. Besides coding, 
-                I enjoy reading and hanging out with friends. I would love to work with like-minded, ambitious people, 
-                so if that's you, you can contact me below!
+            <p className='aboutMeTxt'>Hello! I'm Pierre Mingels, a skilled full-stack software developer from San Diego, California. 
+            I have expertise in JavaScript, React, Node.js, and other technologies. My passion for continuous learning 
+            drives me to stay updated with the latest trends. Apart from coding, I enjoy reading and spending time with friends. 
+            If you're an ambitious, like-minded individual, feel free to contact me!
             </p>
-            <button className='aboutMeResumeBtn'>Resume</button>
+            <div className='aboutMeCardsWrapper'>
+                <Tilt options={{ max: 45, scale: 1, speed: 450 }}>
+                    <div className='aboutMeCard' onMouseDown={(e) => e.preventDefault()}>
+                        <img className='cardImg' src={frontEndIcon}/>
+                        <h5 className='cardTitle'>Front End Developer</h5>
+                    </div>
+                </Tilt>
+                <Tilt options={{ max: 45, scale: 1, speed: 450 }}>
+                    <div className='aboutMeCard' onMouseDown={(e) => e.preventDefault()}>
+                        <img className='cardImg' src={webDevIcon} />
+                        <h5 className='cardTitle'>Web Developer</h5>
+                    </div>
+                </Tilt>
+                <Tilt options={{ max: 45, scale: 1, speed: 450 }}>
+                    <div className='aboutMeCard' onMouseDown={(e) => e.preventDefault()}>
+                        <img className='cardImg' src={backEndIcon} />
+                        <h5 className='cardTitle'>Back End Developer</h5>
+                    </div>
+                </Tilt>
+            </div>
         </div>
     </div>
   )
