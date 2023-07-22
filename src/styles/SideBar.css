@@ -1,6 +1,7 @@
 .sideBarWrapper {
-    position: fixed;
-    top: 32%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     right: 60px;
     z-index: 5;
 }
@@ -34,4 +35,36 @@
 
 .sideBarListItem:hover {
     color: black;
+}
+
+@media screen and (min-width: 1536.1px) and (max-width: 100vw) {
+}
+
+@media (max-width: 1536px) {
+    .sideBarWrapper {
+        right: calc(60px + (100vw - 1536px) / 25);
+    }
+}
+
+@media (max-width: 800px) {
+    .sideBarWrapper {
+        position: fixed;
+        top: unset;
+        right: unset;
+        transform: unset;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+    }
+    .sideBarContent {
+        border-radius: 0px;
+        padding: 20px 16px;
+    }
+    .sideBarListWrapper {
+        flex-direction: unset;
+        justify-content: space-around;
+    }
+}
+
+@media (max-width: 500px) {
 }

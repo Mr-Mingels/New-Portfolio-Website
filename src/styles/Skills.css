@@ -1,0 +1,108 @@
+.skillsWrapper {
+    height: 100vh;
+    min-height: 760px;
+}
+
+.skillsContent {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    padding: 0 200px;
+    position: relative;
+    z-index: 2;
+}
+
+.skillsSubTitleTxt {
+    color: #C0C0C0;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.skillsTitle {
+    color: white;
+    font-size: 42px;
+}
+
+.skillsMainTxt {
+    margin-top: 24px;
+    color: #C0C0C0;
+    font-size: 15px;
+}
+
+.skillsTechWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 42px;
+    gap: 24px;
+}
+
+.technologyWrapper {
+    width: 120px;
+    height: 120px;
+}
+
+@media screen and (min-width: 1536.1px) and (max-width: 100vw) {
+    .skillsContent {
+        padding-left: calc(200px + (100vw - 1536px) / 8);
+        padding-right: calc(200px + (100vw - 1536px) / 8);
+    }
+}
+
+@media (max-width: 1536px) {
+    .skillsContent {
+        padding-left: calc(200px + (100vw - 1536px) / 8);
+        padding-right: calc(200px + (100vw - 1536px) / 8);
+    }
+    .skillsSubTitleTxt {
+        font-size: calc(16px + (100vw - 1536px) / 250);
+    }
+    .skillsTitle {
+        font-size: calc(42px + (100vw - 1536px) / 250);
+    }
+    .skillsMainTxt {
+        font-size: calc(15px + (100vw - 1536px) / 250);
+    }
+    .technologyWrapper {
+        width: calc(120px + (100vw - 1536px) / 20);
+        height: calc(120px + (100vw - 1536px) / 20);
+    }
+}
+
+
+@media (max-width: 800px) {
+    .skillsContent {
+        padding-left: calc(108px + (100vw - 800px) / 4);
+        padding-right: calc(108px + (100vw - 800px) / 4);
+        padding-bottom: 56px;
+    }
+    .technologyWrapper {
+        width: calc(84px + (100vw - 800px) / 18);
+        height: calc(84px + (100vw - 800px) / 18);
+    }
+}
+
+@media (max-width: 500px) {
+    .skillsContent {
+        padding-left: calc(70px + (100vw - 500px) / 4);
+        padding-right: calc(70px + (100vw - 500px) / 4);
+    }
+    .skillsSubTitleTxt {
+        font-size: calc(12px + (100vw - 500px) / 250);
+    }
+    .skillsTitle {
+        font-size: calc(38px + (100vw - 500px) / 250);
+    }
+    .skillsMainTxt {
+        font-size: calc(11px + (100vw - 500px) / 250);
+    }
+    .skillsTechWrapper {
+        gap: calc(20px + (100vw - 500px) / 18);
+    }
+    .technologyWrapper {
+        width: calc(67px + (100vw - 500px) / 18);
+        height: calc(67px + (100vw - 500px) / 18);
+    }
+}

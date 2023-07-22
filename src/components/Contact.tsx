@@ -7,8 +7,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faX } from '@fortawesome/free-solid-svg-icons'
 
 const Contact = () => {
-    const initialPosition = { x: '100%', y: '100%' };
-    const targetPosition = { x: 0, y: 0 };
     const [name, setName] = useState({
         value: '',
         placeholder: 'Name'
@@ -33,6 +31,7 @@ const Contact = () => {
     const [modalOpen, setModalOpen] = useState(false)
     const [modalTxt, setModalTxt] = useState('Message Sent!')
     const form = useRef<HTMLFormElement>(null);
+    const hasAnimatedButton = useRef(false);
     
       useEffect(() => {
         if(name.value !== '') {
@@ -129,30 +128,50 @@ const Contact = () => {
     <div className='contactWrapper'>
         {modalOpen && (
             <motion.div className='contactModalWrapper'
-            initial={initialPosition}
-            animate={modalOpen ? targetPosition : initialPosition}
-            transition={{ type: 'spring', damping: 15, stiffness: 100 }}>
+            initial={{ x: 200, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 1, ease: 'easeInOut' }}>
                 <span className='modalTxt'>{modalTxt}</span>
                 <FontAwesomeIcon className='modalIcon' icon={faX} onClick={() => closeModal()}/>
             </motion.div>
         )}
         <div className='contactContent'>
-            <h3 className='contactTitle'>Let's connect.</h3>
+            <motion.h3 className='contactTitle'
+            initial={{ y: -200, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 1, delay: 2, ease: 'easeInOut' }}>Let's connect.</motion.h3>
             <form className='contactFormWrapper' ref={form} onSubmit={sendEmail}>
                 <div className='userInfoInputsWrapper'>
-                    <input type='text' placeholder={name.placeholder} className={`formInput name ${redNamePlaceHolder ? 'red' : ''}`} 
-                    value={name.value} name="user_name" onChange={(e) => setName({ ...name, value: e.target.value})}/>
-                    <input type='email' placeholder={email.placeholder} className={`formInput email ${redEmailPlaceHolder ? 'red' : ''}`}
-                    value={email.value} name="user_email" onChange={(e) => setEmail({ ...email, value: e.target.value})} />
+                    <motion.input type='text' placeholder={name.placeholder} className={`formInput name ${redNamePlaceHolder ? 'red' : ''}`} 
+                    value={name.value} name="user_name" onChange={(e) => setName({ ...name, value: e.target.value})}
+                    initial={{ x: -200, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    transition={{ duration: 1, delay: 1.5, ease: 'easeInOut' }}/>
+                    <motion.input type='email' placeholder={email.placeholder} className={`formInput email ${redEmailPlaceHolder ? 'red' : ''}`}
+                    value={email.value} name="user_email" onChange={(e) => setEmail({ ...email, value: e.target.value})} 
+                    initial={{ x: 200, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    transition={{ duration: 1, delay: 1.5, ease: 'easeInOut' }}/>
                 </div>
-                <input type='text' placeholder={subject.placeholder} className={`formInput subject ${redSubjectPlaceHolder ? 'red' : ''}`}
-                value={subject.value} name="subject" onChange={(e) => setSubject({ ...subject, value: e.target.value})}/>
-                <textarea placeholder={message.placeholder} className={`formInput message ${redMessagePlaceHolder ? 'red' : ''}`}
-                value={message.value} name="message" onChange={(e) => setMessage({ ...message, value: e.target.value})} />
+                <motion.input type='text' placeholder={subject.placeholder} className={`formInput subject ${redSubjectPlaceHolder ? 'red' : ''}`}
+                value={subject.value} name="subject" onChange={(e) => setSubject({ ...subject, value: e.target.value})}
+                initial={{ y: -200, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 1, delay: 0.5, ease: 'easeInOut' }}/>
+                <motion.textarea placeholder={message.placeholder} className={`formInput message ${redMessagePlaceHolder ? 'red' : ''}`}
+                value={message.value} name="message" onChange={(e) => setMessage({ ...message, value: e.target.value})} 
+                initial={{ y: -200, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 1, ease: 'easeInOut' }}/>
                 {loader ? (
                     <button type='button' className='formBtn loading'><span className="submitLoader"></span></button>
                 ) : (
-                    <button type='submit' className='formBtn'>Send</button>
+                    <motion.button type='submit' className='formBtn'
+                    initial={{ x: hasAnimatedButton.current ? 0 : -600, opacity: hasAnimatedButton.current ? 1 : 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    transition={{ duration: 1, delay: 3, ease: 'easeInOut' }}
+                    onUpdate={() => { hasAnimatedButton.current = true; }}
+                    >Send</motion.button>
                 )}
             </form>
         </div>

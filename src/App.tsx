@@ -4,7 +4,7 @@ import { Link, Routes, Route, BrowserRouter, useNavigate, useLocation } from 're
 import { AnimatePresence, motion } from 'framer-motion';
 import NavBar from './components/NavBar';
 import SideBar from './components/SideBar';
-import Hero from './components/Hero';
+import Home from './components/Home';
 import AboutMe from './components/AboutMe';
 import Projects from './components/Projects';
 import Skills from './components/Skills';
@@ -24,13 +24,13 @@ const App = () => {
 
   const location = useLocation()
   return (
-    <>
+    <div className='App'>
       <NavBar />
       <SideBar />
       <img className='appImg' src={appImg} onMouseDown={(e) => e.preventDefault()}/>
       <AnimatePresence mode='wait'>
         <Routes location={location} key={location.pathname}>
-            <Route index element={<Hero />}/>
+            <Route index element={<Home />}/>
             <Route path='/aboutme' element={<AboutMe />} />
             <Route path='/projects' element={<Projects />} />
             <Route path='/skills' element={<Skills />} />
@@ -38,7 +38,7 @@ const App = () => {
             <Route path='*' element={<RedirectToHome />} />
         </Routes>
       </AnimatePresence>
-    </>
+    </div>
   );
 }
 

@@ -8,7 +8,7 @@
 body {
   min-height: 100vh;
   width: 100%;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .appImg {
@@ -25,4 +25,17 @@ body {
   -moz-user-select: none;     /* Firefox */
   -ms-user-select: none;      /* Internet Explorer/Edge */
   user-select: none;  
+}
+
+.App {
+  height: 100vh;
+  min-height: 760px;
+  position: relative;
+}
+
+@media (max-width: 1000px) {
+  body {
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
 }
