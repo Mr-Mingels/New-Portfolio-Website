@@ -145,3 +145,72 @@
     cursor: pointer;
     margin-bottom: auto;
 }
+
+@media screen and (min-width: 1536.1px) and (max-width: 100vw) {
+    .contactContent {
+        padding-left: calc(200px + (100vw - 1536px) / 8);
+        padding-right: calc(200px + (100vw - 1536px) / 8);
+    }
+}
+
+@media (max-width: 1536px) {
+    .contactContent {
+        padding-left: calc(200px + (100vw - 1536px) / 8);
+        padding-right: calc(200px + (100vw - 1536px) / 8);
+    }
+}
+
+
+@media (max-width: 800px) {
+    .contactContent {
+        padding-bottom: 56px;
+    }
+    .contactTitle {
+        font-size: calc(38px + (100vw - 800px) / 50);
+    }
+    .formInput.subject {
+        width: calc(500px + (100vw - 800px) / 2.155);
+    }
+    .formBtn {
+        padding: calc(10px + (100vw - 800px) / 250);
+        width: calc(140px + (100vw - 800px) / 12);
+        font-size: calc(13.3333px + (100vw - 800px) / 250);
+        height: calc(43px + (100vw - 800px) / 78.7);
+    }
+    .contactModalWrapper {
+        bottom: 80px;
+        right: 20px;
+    }
+}
+
+@media (max-width: 500px) {
+    .contactContent {
+        padding-left: calc(70px + (100vw - 500px) / 4);
+        padding-right: calc(70px + (100vw - 500px) / 4);
+    }
+    .contactTitle {
+        font-size: calc(32px + (100vw - 500px) / 50);
+    }
+    .formInput.subject {
+        width: 100%
+    }
+    .formBtn {
+        padding: calc(9px + (100vw - 500px) / 250);
+        width: calc(115px + (100vw - 500px) / 12);
+        font-size: calc(12.1333px + (100vw - 500px) / 250);
+        height: calc(39.19px + (100vw - 500px) / 78.7);
+    }
+    .contactModalWrapper {
+        padding-top: calc(10px + (100vw - 500px) / 200);
+        padding-right: calc(10px + (100vw - 500px) / 200);
+        padding-bottom: calc(10px + (100vw - 500px) / 200);
+        padding-left: calc(16px + (100vw - 500px) / 200);
+    }
+    .modalTxt {
+        font-size: calc(12px + (100vw - 500px) / 100);
+    }
+    .modalIcon {
+        width: calc(9px + (100vw - 500px) / 100);
+        height: calc(9px + (100vw - 500px) / 100);
+    }
+}

@@ -118,7 +118,7 @@
         gap: calc(62px + (100vw - 1536px) / 20);
     }
     .aboutMeCard {
-        width: calc(240px + (100vw - 1536px) / 10);
+        width: calc(240px + (100vw - 1536px) / 9);
         padding: calc(62px + (100vw - 1536px) / 20);
     }
     .cardImg {

@@ -49,6 +49,19 @@
         padding-left: calc(200px + (100vw - 1536px) / 8);
         padding-right: calc(200px + (100vw - 1536px) / 8);
     }
+    .skillsSubTitleTxt {
+        font-size: calc(16px + (100vw - 1536px) / 250);
+    }
+    .skillsTitle {
+        font-size: calc(42px + (100vw - 1536px) / 250);
+    }
+    .skillsMainTxt {
+        font-size: calc(15px + (100vw - 1536px) / 250);
+    }
+    .technologyWrapper {
+        width: calc(120px + (100vw - 1536px) / 20);
+        height: calc(120px + (100vw - 1536px) / 20);
+    }
 }
 
 @media (max-width: 1536px) {
