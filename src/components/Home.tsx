@@ -38,14 +38,15 @@ const Home = () => {
                             repeat={Infinity}
                         />
                     </motion.div>
-                    <motion.button 
-                        className='homeBtn'
+                    <motion.a 
+                        className='homeBtn' href='https://drive.google.com/file/d/11yHQeYL8cdwzXTmLHndwpnCvV7cO0-c_/view?usp=sharing' 
+                        target="_blank" rel="noopener noreferrer" onMouseDown={(e) => e.preventDefault()}
                         initial={{ x: -150, opacity: 0 }}
                         animate={{ x: 0, opacity: 1 }}
                         transition={{ duration: 2, delay: 2 }}
                     >
                         Resume
-                    </motion.button>
+                    </motion.a>
                 </motion.div>
             </motion.div>
         </motion.div>
