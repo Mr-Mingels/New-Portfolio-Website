@@ -1,46 +1,51 @@
-# Getting Started with Create React App
+### **[Portfolio Website](https://pierre-mingels.vercel.app/)**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## **Project Introduction:**
 
-## Available Scripts
+Welcome to the repository of my new personal portfolio website. This site is designed to showcase my technical skills, professional projects, and provide insight into my background and experience in the field of software development
 
-In the project directory, you can run:
+Built with the power of React, the website is organized as a Single Page Application (SPA) which provides a seamless browsing experience. From the landing page, users can smoothly navigate to any section of the website using the sidebar, with options including 'About Me', 'Projects', 'Skills', and 'Contact Me'.
 
-### `npm start`
+Through its modern and responsive design, the website ensures an engaging user experience across all devices.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## **About The Project:**
 
-### `npm test`
+![An image of the home screen of my Portfolio Website](./public/images/PortFolioWebsitePic.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+My portfolio website is a single-page application showcasing my skills, projects, and professional information to potential employers and collaborators
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The common functionalities are:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- The user can navigate to any section of the application by pressing on the different icons in the sidebar
+- On the 'About Me' section, the user can learn more about my personal background
+- In the 'Skills' section, the user can view the skills that I possess.
+- In the 'Projects' section, the user can see a list of the projects that I've worked on. Each project has a description, and include links to visit the project's website or to view the source code
+- In the 'Contact' section, the user can send me a message directly from the website. This form validates the user's input and displays error messages if the input is not valid. Upon successful submission, a message is displayed to the user
+- A 'Resume' button is provided for users to view a PDF version of your resume
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+### **Built With:**
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- React.js
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- TypeScript
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- HTML/CSS
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- Framer Motion
 
-## Learn More
+- Three.js
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### **Key Concepts:**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Framer Motion Animations
+
+- 3D Models
+
+- EmailJS
+
+- Responsive Design
+
+- Project Showcasing
