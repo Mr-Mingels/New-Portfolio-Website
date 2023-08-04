@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Suspense, lazy } from 'react';
 import { Link, Routes, Route, BrowserRouter, useNavigate, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -21,13 +21,17 @@ import appImg from './assets/appImg.jpg'
   }
 
 const App = () => {
+  const [isLoading, setIsLoading] = useState(true)
 
   const location = useLocation()
   return (
     <div className='App'>
+      {isLoading &&(
+        <div className='loaderWrapper'><span className="loader"></span></div>
+      )}
       <NavBar />
       <SideBar />
-      <img className='appImg' src={appImg} onMouseDown={(e) => e.preventDefault()}/>
+      <img className='appImg' src={appImg} onMouseDown={(e) => e.preventDefault()} onLoad={() => setIsLoading(false)}/>
       <AnimatePresence mode='wait'>
         <Routes location={location} key={location.pathname}>
             <Route index element={<Home />}/>
