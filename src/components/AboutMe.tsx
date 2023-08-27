@@ -33,8 +33,8 @@ const AboutMe = () => {
             <div className='aboutMeCardsWrapper'>
                 <Tilt options={{ max: 45, scale: 1, speed: 450 }}>
                     <motion.div className='aboutMeCard' onMouseDown={(e) => e.preventDefault()}
-                    initial={{ x: -50, opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
+                    initial={{ y: 50, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 2 }}>
                         <img className='cardImg' src={frontEndIcon}/>
                         <h5 className='cardTitle'>Front End Developer</h5>
@@ -51,8 +51,8 @@ const AboutMe = () => {
                 </Tilt>
                 <Tilt options={{ max: 45, scale: 1, speed: 450 }}>
                     <motion.div className='aboutMeCard' onMouseDown={(e) => e.preventDefault()}
-                    initial={{ x: 50, opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
+                    initial={{ y: 50, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 2 }}>
                         <img className='cardImg' src={backEndIcon} />
                         <h5 className='cardTitle'>Back End Developer</h5>
