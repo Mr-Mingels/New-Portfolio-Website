@@ -16,7 +16,7 @@ const Skills = () => {
         <motion.h2 className='skillsTitle'
         initial={{ y: -50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 1, delay: 1 }}>Skills.</motion.h2>
+        transition={{ duration: 1, delay: 1 }}>Skills</motion.h2>
         <motion.p className='skillsMainTxt'
         initial={{ y: -50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}

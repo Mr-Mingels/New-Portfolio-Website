@@ -1,19 +1,16 @@
 import Transition from './Transition'
 import '../styles/Projects.css'
-import finTrackImg from '../assets/finTrackDesktopScreenShot.png'
-import puckMasterImg from '../assets/puckMasterScreenShot.png'
-import fotoFolioImg from '../assets/fotoFolioScreenShot.png'
-import chatterSphereImg from '../assets/chatterSphereDesktopScreenShot.png'
-import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEye } from '@fortawesome/free-solid-svg-icons'
+import { faEye, faAngleRight, faAngleLeft, faA } from '@fortawesome/free-solid-svg-icons'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
+import { projects } from '../constants/index';
 
 const Projects = () => {
-
+  const [currIndex, setCurrIndex] = useState(0)
+  const [carouselProjectsSliderLength, setCarouselProjectsSliderLength] = useState(3)
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   useEffect(() => {
@@ -27,175 +24,76 @@ const Projects = () => {
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, []); 
+  }, []);
+
+  useEffect(() => {
+    if (windowWidth <= 1032) {
+      setCurrIndex(0)
+      setCarouselProjectsSliderLength(5)
+    } else {
+      setCurrIndex(0)
+      setCarouselProjectsSliderLength(3)
+    }
+  }, [windowWidth]);
+
+  const handlePrevSlide = () => {
+    setCurrIndex((currIndex) => (currIndex === 0 ? carouselProjectsSliderLength - 1 : currIndex - 1))
+  }
+
+  const handleNextSlide = () => {
+    setCurrIndex((currIndex) => (currIndex === carouselProjectsSliderLength - 1 ? 0 : currIndex + 1))
+  }
 
   return (
     <div className='projectsWrapper'>
-        <div className='projectsContent'>
-            <motion.h5 className='projectsMyWorkTxt'
-            initial={{ y: -50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 1, delay: 1.5 }}>MY WORK</motion.h5>
-            <motion.h2 className='projectsTitle'
-            initial={{ y: -50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 1, delay: 1 }}>Projects.</motion.h2>
-            <motion.p className='projectsMainTxt'
-            initial={{ y: -50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 2 }}>Discover a curated collection of my projects, each embodying my commitment to project-based 
-                learning and efficient problem-solving. You'll find a description for each, along with access to both the 
-                live demos and their respective code repositories. These projects serve as a testament to my ability to employ various 
-                technologies and tackle complex challenges with proficiency.
-            </motion.p>
-            {windowWidth <= 800 ? (
-              <Carousel className='projectsCarouselWrapper' showStatus={false} infiniteLoop={true} >
-                    <div className='projectCard'>
-                      <div className='projectImgWrapper' onMouseDown={(e) => e.preventDefault()}>
-                          <img className='projectImg' src={fotoFolioImg} />
-                          <div className='projectImgSelectorsWrapper'>
-                            <a href="https://foto-folio.vercel.app/" target="_blank" rel="noopener noreferrer" className='projectIconLink'>
-                              <FontAwesomeIcon className='projectIcon' icon={faEye} /></a>
-                            <a href="https://github.com/Mr-Mingels" target="_blank" rel="noopener noreferrer" className='projectIconLink'>
-                              <FontAwesomeIcon className='projectIcon' icon={faGithub} /></a>
-                          </div>
-                      </div>
-                      <h5 className='projectTitle'>Foto Folio</h5>
-                      <p className='projectTxt'>FotoFolio is a powerful and visually engaging photo gallery application, 
-                      designed and developed as a simple and user friendly application.</p>
-                      <div className='projectTagsWrapper'>
-                        <span className='firstTag'>#react</span> <span className='secondTag'>#node.js</span>
-                      </div>
+      <div className='projectsContent'>
+        <motion.h5 className='projectsMyWorkTxt'
+          initial={{ y: -50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 1, delay: 1.5 }}>MY WORK</motion.h5>
+        <motion.h2 className='projectsTitle'
+          initial={{ y: -50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 1, delay: 1 }}>Projects</motion.h2>
+        <motion.p className='projectsMainTxt'
+          initial={{ y: -50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 2 }}>Discover a curated collection of my projects, each embodying my commitment to project-based
+          learning and efficient problem-solving. You'll find a description for each, along with access to both the
+          live demos and their respective code repositories. These projects serve as a testament to my ability to employ various
+          technologies and tackle complex challenges with proficiency.
+        </motion.p>
+        <div className='carouselWrapper'>
+          <div className='carouselContent' style={{ transform: `translateX(-${currIndex * 100}%)` }}>
+            {projects.map((project, index) => (
+              <div className='projectCardWrapper'>
+                <div className='projectCard' key={index}>
+                  <div className='projectImgWrapper' onMouseDown={(e) => e.preventDefault()}>
+                    <img className='projectImg' src={project.projectImg} alt='project img' onMouseDown={(e) => e.preventDefault()} />
+                    <div className='projectImgSelectorsWrapper'>
+                      <a href={`${project.projectLiveLink}`} target="_blank" rel="noopener noreferrer" className='projectIconLink'>
+                        <FontAwesomeIcon className='projectIcon' icon={faEye} /></a>
+                      <a href={`${project.projectGitHubLink}`} target="_blank" rel="noopener noreferrer" className='projectIconLink'>
+                        <FontAwesomeIcon className='projectIcon' icon={faGithub} /></a>
                     </div>
-                    <div className='projectCard'>
-                      <div className='projectImgWrapper' onMouseDown={(e) => e.preventDefault()}>
-                          <img className='projectImg' src={puckMasterImg}/>
-                          <div className='projectImgSelectorsWrapper'>
-                            <a href="https://puck-master.vercel.app/" target="_blank" rel="noopener noreferrer" className='projectIconLink'>
-                              <FontAwesomeIcon className='projectIcon' icon={faEye} /></a>
-                            <a href="https://github.com/Mr-Mingels" target="_blank" rel="noopener noreferrer" className='projectIconLink'>
-                              <FontAwesomeIcon className='projectIcon' icon={faGithub} /></a>
-                          </div>
-                      </div>
-                      <h5 className='projectTitle'>Puck-Master</h5>
-                      <p className='projectTxt'>Puck-Master is a React-based virtual air hockey game that offers interactive gameplay 
-                      against an AI opponent, all within your browser!</p>
-                      <div className='projectTagsWrapper'>
-                        <span className='firstTag'>#react</span> <span className='secondTag'>#ai</span>
-                      </div>
-                    </div>
-                    <div className='projectCard'>
-                      <div className='projectImgWrapper' onMouseDown={(e) => e.preventDefault()}>
-                          <img className='projectImg' src={chatterSphereImg} />
-                          <div className='projectImgSelectorsWrapper'>
-                            <a href="https://chatter-sphere.onrender.com/" target="_blank" rel="noopener noreferrer" className='projectIconLink'>
-                              <FontAwesomeIcon className='projectIcon' icon={faEye} /></a>
-                            <a href="https://github.com/Mr-Mingels" target="_blank" rel="noopener noreferrer" className='projectIconLink'>
-                              <FontAwesomeIcon className='projectIcon' icon={faGithub} /></a>
-                          </div>
-                      </div>
-                      <h5 className='projectTitle'>Chatter Sphere</h5>
-                      <p className='projectTxt'>Chatter Sphere is a feature-rich full-stack application that facilitates real-time global 
-                      communication, fostering easier and more engaging connections.</p>
-                      <div className='projectTagsWrapper'>
-                        <span className='firstTag'>#react</span> <span className='secondTag'>#mongodb</span> <span className='thirdTag'>#node.js</span>
-                      </div>
-                    </div>
-                    <div className='projectCard'>
-                      <div className='projectImgWrapper' onMouseDown={(e) => e.preventDefault()}>
-                          <img className='projectImg' src={finTrackImg} />
-                          <div className='projectImgSelectorsWrapper'>
-                            <a href="https://fin-track.onrender.com/" target="_blank" rel="noopener noreferrer" className='projectIconLink'>
-                              <FontAwesomeIcon className='projectIcon' icon={faEye} /></a>
-                            <a href="https://github.com/Mr-Mingels" target="_blank" rel="noopener noreferrer" className='projectIconLink'>
-                              <FontAwesomeIcon className='projectIcon' icon={faGithub} /></a>
-                          </div>
-                      </div>
-                      <h5 className='projectTitle'>Fin Track</h5>
-                      <p className='projectTxt'>Fin Track is an application for easy personal finance management, offering 
-                      dynamic budget planning and expense tracking to simplify your financial life.</p>
-                      <div className='projectTagsWrapper'>
-                        <span className='firstTag'>#react</span> <span className='secondTag'>#postgresql</span> <span className='thirdTag'>#node.js</span>
-                      </div>
-                    </div>
-              </Carousel>
-            ) : (
-              <Carousel className='projectsCarouselWrapper' showStatus={false} infiniteLoop={true} >
-                <div className="projectCarouselSlide">
-                    <div className='projectCard'>
-                      <div className='projectImgWrapper' onMouseDown={(e) => e.preventDefault()}>
-                          <img className='projectImg' src={fotoFolioImg} />
-                          <div className='projectImgSelectorsWrapper'>
-                            <a href="https://foto-folio.vercel.app/" target="_blank" rel="noopener noreferrer" className='projectIconLink'>
-                              <FontAwesomeIcon className='projectIcon' icon={faEye} /></a>
-                            <a href="https://github.com/Mr-Mingels" target="_blank" rel="noopener noreferrer" className='projectIconLink'>
-                              <FontAwesomeIcon className='projectIcon' icon={faGithub} /></a>
-                          </div>
-                      </div>
-                      <h5 className='projectTitle'>Foto Folio</h5>
-                      <p className='projectTxt'>FotoFolio is a powerful and visually engaging photo gallery application, 
-                      designed and developed as a simple and user friendly application.</p>
-                      <div className='projectTagsWrapper'>
-                        <span className='firstTag'>#react</span> <span className='secondTag'>#node.js</span>
-                      </div>
-                    </div>
-                    <div className='projectCard'>
-                      <div className='projectImgWrapper' onMouseDown={(e) => e.preventDefault()}>
-                          <img className='projectImg' src={puckMasterImg}/>
-                          <div className='projectImgSelectorsWrapper'>
-                            <a href="https://puck-master.vercel.app/" target="_blank" rel="noopener noreferrer" className='projectIconLink'>
-                              <FontAwesomeIcon className='projectIcon' icon={faEye} /></a>
-                            <a href="https://github.com/Mr-Mingels" target="_blank" rel="noopener noreferrer" className='projectIconLink'>
-                              <FontAwesomeIcon className='projectIcon' icon={faGithub} /></a>
-                          </div>
-                      </div>
-                      <h5 className='projectTitle'>Puck-Master</h5>
-                      <p className='projectTxt'>Puck-Master is a React-based virtual air hockey game that offers interactive gameplay 
-                      against an AI opponent, all within your browser!</p>
-                      <div className='projectTagsWrapper'>
-                        <span className='firstTag'>#react</span> <span className='secondTag'>#ai</span>
-                      </div>
-                    </div>
+                  </div>
+                  <h5 className='projectTitle'>{project.projectTitle}</h5>
+                  <p className='projectTxt'>{project.projectDesc}</p>
+                  <div className='projectTagsWrapper'>
+                    <span className='firstTag'>{project.projectFirstTag}</span> <span className='secondTag'>{project.projectSecondTag}</span> {project.projectThirdTag && (<span className='thirdTag'>{project.projectThirdTag}</span>)}
+                  </div>
                 </div>
-                <div className="projectCarouselSlide">
-                    <div className='projectCard'>
-                      <div className='projectImgWrapper' onMouseDown={(e) => e.preventDefault()}>
-                          <img className='projectImg' src={chatterSphereImg} />
-                          <div className='projectImgSelectorsWrapper'>
-                            <a href="https://chatter-sphere.onrender.com/" target="_blank" rel="noopener noreferrer" className='projectIconLink'>
-                              <FontAwesomeIcon className='projectIcon' icon={faEye} /></a>
-                            <a href="https://github.com/Mr-Mingels" target="_blank" rel="noopener noreferrer" className='projectIconLink'>
-                              <FontAwesomeIcon className='projectIcon' icon={faGithub} /></a>
-                          </div>
-                      </div>
-                      <h5 className='projectTitle'>Chatter Sphere</h5>
-                      <p className='projectTxt'>Chatter Sphere is a feature-rich full-stack application that facilitates real-time global 
-                      communication, fostering easier and more engaging connections.</p>
-                      <div className='projectTagsWrapper'>
-                        <span className='firstTag'>#react</span> <span className='secondTag'>#mongodb</span> <span className='thirdTag'>#node.js</span>
-                      </div>
-                    </div>
-                    <div className='projectCard'>
-                      <div className='projectImgWrapper' onMouseDown={(e) => e.preventDefault()}>
-                          <img className='projectImg' src={finTrackImg} />
-                          <div className='projectImgSelectorsWrapper'>
-                            <a href="https://fin-track.onrender.com/" target="_blank" rel="noopener noreferrer" className='projectIconLink'>
-                              <FontAwesomeIcon className='projectIcon' icon={faEye} /></a>
-                            <a href="https://github.com/Mr-Mingels" target="_blank" rel="noopener noreferrer" className='projectIconLink'>
-                              <FontAwesomeIcon className='projectIcon' icon={faGithub} /></a>
-                          </div>
-                      </div>
-                      <h5 className='projectTitle'>Fin Track</h5>
-                      <p className='projectTxt'>Fin Track is an application for easy personal finance management, offering 
-                      dynamic budget planning and expense tracking to simplify your financial life.</p>
-                      <div className='projectTagsWrapper'>
-                        <span className='firstTag'>#react</span> <span className='secondTag'>#postgresql</span> <span className='thirdTag'>#node.js</span>
-                      </div>
-                    </div>
-                </div>
-              </Carousel>
-            )}
+              </div>
+            ))}
+          </div>  
+          <div className='carouselArrowWrapper left' onClick={() => handlePrevSlide()}>
+              <FontAwesomeIcon icon={faAngleLeft} className='carouselArrow'/>
+          </div>
+          <div className='carouselArrowWrapper right' onClick={() => handleNextSlide()}>
+              <FontAwesomeIcon icon={faAngleRight} className='carouselArrow'/>
+          </div>
         </div>
+      </div>
     </div>
   )
 }

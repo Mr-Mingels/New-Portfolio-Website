@@ -12,7 +12,7 @@ const AboutMe = () => {
   return (
     <div className='aboutMeWrapper'>
         <img className='appImg aboutme' src={appImg} onMouseDown={(e) => e.preventDefault()}/>
-        <div className='aboutMeCotent'>
+        <div className='aboutMeContent'>
             <motion.h5 className='aboutMeSecTitle'
             initial={{ y: -50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -20,7 +20,7 @@ const AboutMe = () => {
             <motion.h2 className='aboutMeOverViewTxt'
             initial={{ y: -50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 1, delay: 1 }}>Overview.</motion.h2>
+            transition={{ duration: 1, delay: 1 }}>Overview</motion.h2>
             <motion.p className='aboutMeTxt' 
             initial={{ y: -50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}

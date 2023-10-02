@@ -139,7 +139,7 @@ const Contact = () => {
             <motion.h3 className='contactTitle'
             initial={{ y: -200, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 1, delay: 2, ease: 'easeInOut' }}>Let's connect.</motion.h3>
+            transition={{ duration: 1, delay: 2, ease: 'easeInOut' }}>Let's connect</motion.h3>
             <form className='contactFormWrapper' ref={form} onSubmit={sendEmail}>
                 <div className='userInfoInputsWrapper'>
                     <motion.input type='text' placeholder={name.placeholder} className={`formInput name ${redNamePlaceHolder ? 'red' : ''}`} 

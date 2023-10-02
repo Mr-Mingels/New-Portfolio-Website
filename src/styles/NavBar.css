@@ -6,6 +6,8 @@
     height: 70px;
     width: 100%;
     z-index: 5;
+    display: flex;
+    justify-content: center;
 }
 
 .navBarContent {
@@ -15,6 +17,8 @@
     height: 100%;
     padding: 15px 200px;
     justify-content: space-between;
+    width: 100%;
+    max-width: 1600px;
 }
 
 .navBarTitle {
@@ -37,13 +41,6 @@
 
 .navBarItem:hover {
     color: white;
-}
-
-@media screen and (min-width: 1536.1px) and (max-width: 100vw) {
-    .navBarContent {
-        padding-left: calc(200px + (100vw - 1536px) / 8);
-        padding-right: calc(200px + (100vw - 1536px) / 8);
-    }
 }
 
 @media (max-width: 1536px) {
