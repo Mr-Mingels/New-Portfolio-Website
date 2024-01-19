@@ -75,7 +75,7 @@
 }
 
 @media (max-width: 1536px) {
-    .aboutMeCotent {
+    .aboutMeContent {
         padding-left: calc(200px + (100vw - 1536px) / 8);
         padding-right: calc(200px + (100vw - 1536px) / 8);
     }
@@ -105,7 +105,7 @@
 }
 
 @media (max-width: 1150px) {
-    .aboutMeCotent {
+    .aboutMeContent {
         padding-left: calc(150px + (100vw - 1150px) / 3);
     }
     .aboutMeCardsWrapper {
@@ -115,7 +115,7 @@
 
 
 @media (max-width: 800px) {
-    .aboutMeCotent {
+    .aboutMeContent {
         padding-left: calc(108px + (100vw - 800px) / 4);
         padding-right: calc(108px + (100vw - 800px) / 4);
         padding-bottom: 56px;
@@ -132,7 +132,7 @@
     .aboutMeWrapper {
         min-height: 1400px;
     }
-    .aboutMeCotent {
+    .aboutMeContent {
         padding-left: calc(70px + (100vw - 500px) / 4);
         padding-right: calc(70px + (100vw - 500px) / 4);
         padding-bottom: unset;
