@@ -15,7 +15,7 @@ const NavBar = () => {
                     className='navBarItem'><FontAwesomeIcon className='navBarItem' icon={faGithub} /></a>
                     <a href="mailto:Pierre.Mingels@protonmail.com" target="_blank" rel="noopener noreferrer" 
                     className='navBarItem'><FontAwesomeIcon className='navBarItem' icon={faEnvelope} /></a>
-                    <a className="navBarItem" href='https://drive.google.com/file/d/11yHQeYL8cdwzXTmLHndwpnCvV7cO0-c_/view?usp=sharing' 
+                    <a className="navBarItem" href='https://drive.google.com/file/d/1jp6W7_8BejzYWvAhGTEu2eFV_M1BX6pU/view' 
                     target="_blank" rel="noopener noreferrer" onMouseDown={(e) => e.preventDefault()}>
                         <FontAwesomeIcon className='navBarItem' icon={faFile} />
                     </a>
